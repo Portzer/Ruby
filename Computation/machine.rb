@@ -3,14 +3,14 @@
 require_relative 'variable'
 class Machine < Struct.new(:expression,:environment)
   def step
-    self.expression = expression.reduce(environment)
+    self.expression,self.environment = expression.reduce(environment)
   end
   def run
     while expression.reducible?
-      puts expression
+      puts "#{expression},  #{environment}"
       step
     end
-    puts expression
+    puts "#{expression},  #{environment}"
   end
 
 end
