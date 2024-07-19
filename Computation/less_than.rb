@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative 'variable'
+require_relative 'boolean'
 class LessThan < Struct.new(:left, :right)
   def to_s
     "#{left} < #{right}"
