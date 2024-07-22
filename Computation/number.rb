@@ -10,4 +10,7 @@ class Number < Struct.new(:value)
   def reducible?
     false
   end
+  def evaluate(environment)
+    self
+  end
 end

@@ -19,4 +19,7 @@ class Assign < Struct.new(:name, :expression)
   def reducible?
     true
   end
+  def evaluate(environment)
+    environment.merge({name => expression.evaluate(environment)})
+  end
 end

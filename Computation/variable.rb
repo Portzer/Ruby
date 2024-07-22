@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-class Variable < Struct.new(:value)
+class Variable < Struct.new(:key)
   def to_s
-    value.to_s
+    key.to_s
   end
   def inspect
     "<<#{self}>>"
@@ -10,6 +10,9 @@ class Variable < Struct.new(:value)
     true
   end
   def reduce (environment)
-    environment[value]
+    environment[key]
+  end
+  def evaluate(environment)
+    environment[key]
   end
 end

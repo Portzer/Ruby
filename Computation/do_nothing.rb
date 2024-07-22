@@ -13,4 +13,7 @@ class DoNothing
   def reducible?
     false
   end
+  def evaluate(environment)
+    environment
+  end
 end

@@ -19,4 +19,7 @@ class Sequence<Struct.new(:first, :second)
       [Sequence.new(first_reduce, second),environment_reduce]
     end
   end
+  def evaluate(environment)
+    second.evaluate(first.evaluate(environment))
+  end
 end
