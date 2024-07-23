@@ -13,4 +13,7 @@ class Number < Struct.new(:value)
   def evaluate(environment)
     self
   end
+  def to_ruby
+    "-> e { #{value.inspect} }"
+  end
 end

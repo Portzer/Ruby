@@ -15,4 +15,7 @@ class Variable < Struct.new(:key)
   def evaluate(environment)
     environment[key]
   end
+  def to_ruby
+    "-> e { e[#{key.inspect}] }"
+  end
 end
